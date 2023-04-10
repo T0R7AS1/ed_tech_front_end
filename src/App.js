@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Login from './guest/Login';
+import Register from './guest/Register';
+import i18n from './i18n';
+import { 
+    useEffect,
+    useState,
+    createContext,
+} from "react";
+
+export const RegisterMessage = createContext('');
 
 function App() {
+    const [message, setMessage] = useState('');
+    useEffect(() => {
+        i18n.changeLanguage('enUS');
+    }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RegisterMessage.Provider value={{ message, setMessage }}>
+        <Router>
+            <Routes>
+                <Route path="/" element={
+                    (<> index </>)
+                }/>
+                <Route path="/login" element={
+                    <Login/>
+                }/>
+                <Route path="/register" element={
+                    <Register/>
+                }/>
+                <Route path="/products/:action" element={
+                    (<> products </>)
+                }/>
+            </Routes>
+        </Router> // NOTE Creating all needed routes for the app 
+    </RegisterMessage.Provider>
   );
 }
 

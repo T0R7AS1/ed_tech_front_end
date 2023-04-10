@@ -1,0 +1,23 @@
+{
+    "login_info": "Enter your details to login to your account",
+    "password": "Password",
+    "login": "Login",
+    "email": "Email",
+    "register_now": "Register now",
+    "back_to_login": "Back to login",
+    "register": "Register",
+    "repeat_password": "Repeat password",
+    "username": "Username",
+    "register_info": "Enter your details to register",
+    "invalid_token": "Invalid token",
+    "there_are_more_errors": "There are {{count}} more errors",
+    "please_enter_a_valid_email_address": "Please enter a valid email address",
+    "the_email_extended_its_max_length": "the email extended its max length",
+    "the_password_field_is_required": "the password field is required",
+    "the_email_field_is_required": "the email field is required",
+    "the_password_must_be_a_string": "the password must be a string",
+    "the_needs_to_be_at_least_8_characters": "the needs to be at least 8 characters",
+    "invalid_credentials": "invalid credentials",
+    "successfully_registered_please_login": "Successfully registered please login",
+    "the_username_field_is_required": "The username field is required"
+}
