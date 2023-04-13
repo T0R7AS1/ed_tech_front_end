@@ -6,13 +6,11 @@ import {
     IconButton,
     Icon,
     Button,
-    Typography,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import GuestIndex from './index';
 import { useState, useContext } from 'react';
 import { 
-    Link,
     useNavigate,
 } from 'react-router-dom';
 import axios from 'axios';
@@ -28,7 +26,7 @@ const defaultValues = {
     password: '',
 };
 
-export default function Login(){
+export default function Login({setIsLoaded}){
     const theme = useTheme();
     const {t} = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
@@ -48,6 +46,9 @@ export default function Login(){
             cookies.set('token', response_token, {
                 path: '/', maxAge: 36000, sameSite: 'strict', secure: true,
             });
+
+            localStorage.setItem('uui', result.data.user.id);
+            setIsLoaded((prev) => !prev);
         } catch (error) {
             const array = [];
             Object.values(error.response.data.errors).forEach(element => {

@@ -16,7 +16,7 @@ export default function Errors({errors: errors}){
                                 mb: 2,
                             }}
                         >
-                            {t(value)}
+                            {value}
                         </Alert>
                     );
                 }
