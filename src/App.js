@@ -32,6 +32,7 @@ function App() {
         <RegisterMessage.Provider value={{ message, setMessage }}>
             <Router>
                 <Routes>
+                    {!userInfo && <Route path="/register" exact element={ <Register /> } /> }
                     <Route path="/*" element={(
                         isLoaded
                             ? userInfo
@@ -39,9 +40,6 @@ function App() {
                                 : <Login setIsLoaded={setIsLoaded}/>
                             : <Loader/>
                     )}/>
-                    <Route path="/register" exact element={
-                        <Register/>
-                    }/>
                 </Routes>
             </Router>
         </RegisterMessage.Provider>

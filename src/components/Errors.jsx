@@ -12,6 +12,7 @@ export default function Errors({errors}){
                 if (index < 3) {
                     return (
                         <Alert severity="error"
+                            key={index}
                             sx={{ 
                                 mb: 2,
                             }}
@@ -22,6 +23,7 @@ export default function Errors({errors}){
                 }
                 return (
                     <Alert severity="error"
+                        key={index}
                         sx={{ 
                             mb: 2,
                         }}

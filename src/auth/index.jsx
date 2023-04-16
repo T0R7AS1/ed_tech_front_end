@@ -19,12 +19,11 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import UserAvatar from './UserAvatar';
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import Products from './Products';
 import FavoritesProducts from './FavoritesProducts';
 import logo from '../assets/images/logo.png';
 import Breadcrumbs from '../components/Breadcrumbs';
-import useWindowSize from "../hooks/useWindowSize.js";
 
 const drawerWidth = 240;
 
@@ -54,8 +53,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function AuthIndex() {
-    const windowSize = useWindowSize();
-    const [open, setOpen] =  useState(windowSize.width <= '600' ? true : false);
+    const [open, setOpen] = useState(true);
     const {t} = useTranslation();
     const {pathname} = useLocation(); 
     const splitPathname = pathname.split('/');
@@ -174,6 +172,7 @@ export default function AuthIndex() {
                     <Routes>
                         <Route path="/" element={<Products/>} />
                         <Route path="/favorites" element={<FavoritesProducts/>} />
+                        <Route path="/*" element={<Navigate to='/'/>} />
                     </Routes>
                 </Paper>
             </Box>
