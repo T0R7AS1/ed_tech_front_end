@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './guest/Login';
 import Register from './guest/Register';
-import Products from './auth/Products';
 import i18n from './i18n';
+import AuthIndex from './auth/index.jsx';
 import { 
     useEffect,
     useState,
@@ -23,7 +23,7 @@ function App() {
             }, 1500);
         }
     }, [userInfo, userError, isLoaded]);
-    console.log(userInfo, userError);
+
     useEffect(() => {
         i18n.changeLanguage('enUS');
     }, []);
@@ -35,19 +35,12 @@ function App() {
                     <Route path="/*" element={(
                         isLoaded
                             ? userInfo
-                                ? <Products/>
+                                ? <AuthIndex/>
                                 : <Login setIsLoaded={setIsLoaded}/>
                             : <Loader/>
-                    )
-                    }/>
-                    <Route path="/login" element={
-                        <Login/>
-                    }/>
+                    )}/>
                     <Route path="/register" exact element={
                         <Register/>
-                    }/>
-                    <Route path="/products/:action" element={
-                        (<> products </>)
                     }/>
                 </Routes>
             </Router>

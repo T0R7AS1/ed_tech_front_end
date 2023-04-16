@@ -3,5 +3,9 @@
     "base_url": "http://127.0.0.1:8000/api/",
     "login": "login",
     "register": "register",
-    "user": "user"
+    "user": "user",
+    "products": "products",
+    "add_to_favorites": "add-to-favorites",
+    "remove_from_favorites": "remove-from-favorites",
+    "favorites": "favorites"
 }

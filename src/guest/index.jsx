@@ -6,11 +6,9 @@ import {
 } from '@mui/material';
 import { useContext } from 'react';
 import {RegisterMessage} from '../App.js';
-import { useTranslation } from 'react-i18next';
 
 export default function GuestIndex({children, title}){
     const theme = useTheme();
-    const {t} = useTranslation();
     const {message} = useContext(RegisterMessage);
     return (
         <Box 

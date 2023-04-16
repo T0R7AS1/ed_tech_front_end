@@ -1,6 +1,5 @@
 import {
     Box,
-    useTheme,
     TextField,
     InputAdornment,
     IconButton,
@@ -27,7 +26,6 @@ const defaultValues = {
 };
 
 export default function Login({setIsLoaded}){
-    const theme = useTheme();
     const {t} = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
     const [value, setValue] = useState(defaultValues);
@@ -50,11 +48,13 @@ export default function Login({setIsLoaded}){
             localStorage.setItem('uui', result.data.user.id);
             setIsLoaded((prev) => !prev);
         } catch (error) {
-            const array = [];
-            Object.values(error.response.data.errors).forEach(element => {
-                array.push(element[0]);
-            });
-            setErrors(array);
+            if (error.response) {
+                const array = [];
+                Object.values(error.response.data.errors).forEach(element => {
+                    array.push(element[0]);
+                });
+                setErrors(array);
+            }
         }
     };
 

@@ -11,5 +11,22 @@
     "register_info": "Enter your details to register",
     "invalid_token": "Invalid token",
     "there_are_more_errors": "There are {{count}} more errors",
-    "invalid_credentials": "Invalid credentials"
+    "invalid_credentials": "Invalid credentials",
+    "logged_in_as": "Logged in as",
+    "products": "Products",
+    "my_favorites": "My favorites",
+    "name": "Name",
+    "description": "Description",
+    "price": "Price",
+    "created_at": "Created at",
+    "updated_at": "Updated at",
+    "per_page": "Per page",
+    "total_items": "Total items",
+    "favorites": "Favorites",
+    "home": "Home",
+    "logout": "Logout",
+    "successfully_registered_please_login": "Successfully registered please login",
+    "viewing_product": "Viewing product",
+    "is_favorite": "Is favorite",
+    "close": "Close"
 }

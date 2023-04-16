@@ -4,7 +4,6 @@ import apiList from './api_list.json';
 
 const cookie = new Cookies();
 
-
 function getToken() {
     if (cookie.get('token')) {
         return `Bearer ${cookie.get('token')}`;

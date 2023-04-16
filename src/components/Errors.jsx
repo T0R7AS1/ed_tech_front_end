@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-export default function Errors({errors: errors}){
+export default function Errors({errors}){
     const {t} = useTranslation();
     return (
         <Box>

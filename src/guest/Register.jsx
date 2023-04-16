@@ -1,6 +1,5 @@
 import {
     Box,
-    useTheme,
     TextField,
     InputAdornment,
     IconButton,
@@ -25,12 +24,12 @@ const defaultValues = {
     password: '',
     password_confirmation: '',
 };
+
 export default function Register(){
-    const theme = useTheme();
     const {t} = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
     const [value, setValue] = useState(defaultValues);
-    const [errors, setErrors] = useState([]); // NOTE usable only when needs to be changed
+    const [errors, setErrors] = useState([]);
     const navigation = useNavigate();
     const {setMessage} = useContext(RegisterMessage);
     const handleRequest = async () => {
@@ -39,7 +38,7 @@ export default function Register(){
             const result = await axios.post(`${apis.base_url}${apis.register}`, value);
             if (result.status === 201) {
                 setMessage(t('successfully_registered_please_login'));
-                navigation('/login');
+                navigation('/');
             }
         } catch (error) {
             if (error.response) {
@@ -127,7 +126,7 @@ export default function Register(){
                         textTransform: 'unset',
                     }}
                     component={Link}
-                    to="/login"
+                    to="/"
                 >
                     {t('back_to_login')}
                 </Button>
