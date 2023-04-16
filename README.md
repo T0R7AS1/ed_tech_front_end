@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Run project locally
+## Running project locally
 
-In the project directory, you can run:
-
-### `yarn start`
+1. clone repository
+2. in terminal run yarn install
+3. in terminal run yarn start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
